@@ -1,0 +1,12 @@
+{
+  "name": "blue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cli.js",
+  "keywords": [],
+  "author": "Ado",
+  "license": "MIT",
+  "bin": {
+    "blue": "./cli.js"
+  }
+}
