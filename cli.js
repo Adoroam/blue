@@ -1,5 +1,15 @@
 #!/usr/bin/env node
-
-process.stdin.resume()
+const [bin, loc, ...args] = process.argv
 process.stdin.setEncoding('utf8')
-process.stdin.on('data', data => console.log(`\x1b[34m${data}\x1b[0m`))
+const blueText = text => console.log(`\x1b[34m${text}\x1b[0m`)
+const handleRequest = data => {
+  blueText(data)
+  process.exit(0)
+}
+if (args.length) {
+  handleRequest(args.join(' '))
+} else {
+  process.stdin.resume()
+  process.stdin.on('data', handleRequest)
+}
+
